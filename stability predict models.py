@@ -186,7 +186,7 @@ def df_train2(x,a):
 
 
 a, b, c, d,e,f,g = 0, 0, 0, 0,0,0,0
-for i in range(11,16):
+for i in range(11,21):
 
     print('************:',i)
     or_train_auc,or_test_auc,roc, y_pred1= df_train2(ori_data_x,i)
@@ -235,13 +235,3 @@ print(a/5,b/5,c/5,d/5,e/5,f/5,g/5)
 print(a,b,c,d,e,f,g)
 
 
-x1 = ori_data_x.copy()
-del x1['Y1']
-y1 = ori_data_x['Y1']
-clf = xgboost.XGBClassifier(learning_rate=0.1, objective='binary:logistic',n_estimators=80,max_depth = 6)
-#clf = CascadeForestClassifier(min_samples_leaf = 5,n_trees = 20,max_depth = 4,max_layers = 2,random_state=1255)
-x_train, x_test, y_train, y_test = train_test_split(x1, y1, test_size=0.3, random_state=111)
-#score4 = cross_val_score(clf, x_train, y_train, cv=5, scoring='accuracy')
-clf.fit(x_train,y_train)
-#plot_importance(clf)
-#pyplot.show()
