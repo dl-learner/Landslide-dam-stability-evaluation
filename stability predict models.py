@@ -10,7 +10,6 @@ from sklearn.ensemble import RandomForestClassifier
 import xgboost
 from sklearn.model_selection import GridSearchCV
 from sklearn.preprocessing import StandardScaler
-from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 from sklearn.linear_model import LogisticRegression
@@ -151,7 +150,7 @@ def df_train2(x,a):
                   'min_samples_leaf': [1],
                   'max_features': ['auto']}'''
 
-    #et_clf = ExtraTreesClassifier(random_state=42)
+    #et_clf = RandomForestClassifier(random_state=42)
     #et_clf = LogisticRegression()
 
 
